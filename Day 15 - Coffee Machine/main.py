@@ -127,6 +127,8 @@ def add_ingredient(added_ingredient):
     how_much = int(input(f"How much {added_ingredient} would you like to add? "))
     if how_much == 0:
         print("You really think you're so bloody funny then?")
+    elif how_much < 0:
+        print("What, you want to steal from the coffee machine?")
     else:
         if added_ingredient == "water":
             print("Pouring in some water... ")

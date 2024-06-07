@@ -6,6 +6,7 @@
 #TODO: a function that counts the coins
 #TODO: a function that says whether the transaction was sufficient
 from menu import MENU
+from art import logo
 
 resources = {
     "Water" : 300,

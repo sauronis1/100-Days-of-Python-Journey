@@ -5,8 +5,11 @@
 #TODO: a function that checks if there are enough resources
 #TODO: a function that counts the coins
 #TODO: a function that says whether the transaction was sufficient
+
+
 from menu import MENU
 from art import logo
+
 
 resources = {
     "Water" : 300,
@@ -14,12 +17,16 @@ resources = {
     "Coffee" : 100,
 }
 
+
 finances = {
     "Money" : 5,
 }
+
+
 def what_would_you_like():
     order = input("What would you like? (espresso/latte/cappuccino) ")
     return order
+
 
 def get_necessary_ingredients(item):
     water_needed = MENU[item]["ingredients"]["water"]
@@ -30,6 +37,8 @@ def get_necessary_ingredients(item):
         milk_needed = 0
     necessary_ingredients = [water_needed, milk_needed, coffee_needed]
     return necessary_ingredients
+
+
 def report():
     print(f'''
     Water: {resources["Water"]}ml
@@ -38,11 +47,13 @@ def report():
     Money: ${finances["Money"]}
 ''')
 
+
 def report_in_list():
     resources_owned_list = []
     for key in resources:
         resources_owned_list.append(resources[key])
     return resources_owned_list
+
 
 def check_resources(item):
     resources_needed = get_necessary_ingredients(item)
@@ -53,6 +64,7 @@ def check_resources(item):
             return False
         else:
             return True
+
 
 def taking_coins(item):
     money_necessary = MENU[item]["cost"]
@@ -75,6 +87,7 @@ def taking_coins(item):
             print(f"Here is ${round(money_taken_rounded-money_necessary, 2)} in change.")
             not_paid_for = False
 
+
 def deduct_resources_and_add_money(item):
     used_ingredients = get_necessary_ingredients(item)
     i = 0
@@ -82,6 +95,7 @@ def deduct_resources_and_add_money(item):
         resources[key] -= used_ingredients[i]
         i += 1
     finances["Money"] += MENU[item]["cost"]
+
 
 def maintenance():
     maintenance_not_over = True
@@ -107,6 +121,8 @@ def more_maintenance_question():
         return True
     else:
         return False
+    
+    
 def add_ingredient(added_ingredient):
     how_much = int(input(f"How much {added_ingredient} would you like to add? "))
     if how_much == 0:
@@ -121,7 +137,11 @@ def add_ingredient(added_ingredient):
         elif added_ingredient == "coffee":
             print("Adding some coffee beans...")
             resources["Coffee"] += how_much
+            
+            
 def operate_coffee_machine():
+    print(logo)
+
     not_turned_off = True
     while not_turned_off:
         command = what_would_you_like()
@@ -135,5 +155,6 @@ def operate_coffee_machine():
                 taking_coins(command)
                 deduct_resources_and_add_money(command)
                 print(f"Here is your {command} ☕, please enjoy!")
+
 
 operate_coffee_machine()

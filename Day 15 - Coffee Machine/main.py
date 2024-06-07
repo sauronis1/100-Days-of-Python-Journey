@@ -77,7 +77,9 @@ def taking_coins(item):
         pennies_taken = int(input("How many pennies? "))
         money_taken = quarters_taken*0.25 + dimes_taken*0.10 + nickles_taken*0.05 + pennies_taken*0.01
         money_taken_rounded = round(money_taken, 2)
-        if money_taken_rounded < money_necessary:
+        if money_taken_rounded < 0:
+            print("Really? That's the path you've chosen in your life? Trying to steal from a coffee machine?")
+        elif money_taken_rounded < money_necessary:
             print("Insufficient funds. Your money has been refunded.")
         elif money_taken_rounded == money_necessary:
             print(f"(You put in ${money_taken_rounded}.)")

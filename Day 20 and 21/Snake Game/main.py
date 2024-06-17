@@ -32,6 +32,16 @@ while game_is_on:
     """detect collision with food"""
     if snake.head.distance(food) < 15:
         food.refresh()
+        food_too_close_not_checked = True
+        while food_too_close_not_checked:
+            food_too_close = False
+            for segment in snake.segments:
+                if segment.distance(food) < 20:
+                    food_too_close = True
+            if food_too_close:
+                food.refresh()
+            else:
+                food_too_close_not_checked = False
         snake.extend()
         scoreboard.increase_score()
 

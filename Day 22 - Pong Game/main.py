@@ -60,7 +60,7 @@ while game_is_on:
         scoreboard.r_point()
 
     """end game if either player reaches over 4 points"""
-    if scoreboard.l_score >= 5 or scoreboard.r_score >= 5:
+    if scoreboard.l_score >= 3 or scoreboard.r_score >= 3:
         game_is_on = False
         scoreboard.update_scoreboard()
         scoreboard.game_over()

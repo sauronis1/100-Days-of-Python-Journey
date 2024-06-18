@@ -59,4 +59,11 @@ while game_is_on:
         ball.reset_position()
         scoreboard.r_point()
 
+    """end game if either player reaches over 4 points"""
+    if scoreboard.l_score >= 5 or scoreboard.r_score >= 5:
+        game_is_on = False
+        scoreboard.update_scoreboard()
+        scoreboard.game_over()
+
+
 screen.exitonclick()

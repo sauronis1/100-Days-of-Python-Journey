@@ -14,7 +14,7 @@ class Car(Turtle):
         self.speed = 3
 
     def move(self, speed):
-        self.forward(self.speed+(speed+1))
+        self.forward(self.speed+(speed*1.5))
 
     def teleport_to_right(self):
         random_y = randint(-240, 240)

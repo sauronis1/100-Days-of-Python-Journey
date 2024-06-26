@@ -10,7 +10,5 @@ class Player(Turtle):
         self.goto(0, -280)
 
     def move(self):
-            self.forward(20)
+        self.forward(15)
 
-    def create_car(self):
-        self.__init__()

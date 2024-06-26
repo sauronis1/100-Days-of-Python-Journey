@@ -8,4 +8,4 @@ A man needs something to do
 
 # How be this?
 
-Pycharm and the bottomless well of knowledge that is my mind (StockOverflow)
+Pycharm and the bottomless well of knowledge that is my mind (StackOverflow)

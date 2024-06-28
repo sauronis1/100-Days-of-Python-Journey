@@ -6,7 +6,6 @@ states_data = pandas.read_csv("50_states.csv")
 state_names_list = states_data["state"].to_list()
 state_x_coor = states_data["x"].to_list()
 state_y_coor = states_data["y"].to_list()
-print(state_names_list)
 
 states_dictionary = {
 }

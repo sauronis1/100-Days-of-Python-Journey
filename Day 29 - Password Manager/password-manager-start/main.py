@@ -75,22 +75,22 @@ password_label.grid(row=3, column=0)
 
 # Entries
 website_entry = Entry(width=35)
-website_entry.grid(row=1, column=1, columnspan=2)
+website_entry.grid(row=1, column=1, columnspan=2, sticky="ew")
 website_entry.focus()
 
 email_entry = Entry(width=35)
-email_entry.grid(row=2, column=1, columnspan=2)
+email_entry.grid(row=2, column=1, columnspan=2, sticky="ew")
 email_entry.insert(END, "user@email.com")
 
 password_entry = Entry(width=21)
-password_entry.grid(row=3, column=1)
+password_entry.grid(row=3, column=1, sticky="ew")
 
 # Buttons
 generate_button = Button(text="Generate Password", command=generate_password)
-generate_button.grid(row=3, column=2)
+generate_button.grid(row=3, column=2, sticky="ew")
 
-add_button = Button(text="Add", width=30, command=get_data)
-add_button.grid(row=4, column=1, columnspan=2)
+add_button = Button(text="Add", width=36, command=get_data)
+add_button.grid(row=4, column=1, columnspan=2, sticky="ew")
 
 
 window.mainloop()
